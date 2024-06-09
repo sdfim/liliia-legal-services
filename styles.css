@@ -1,12 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --main-color: #11132b;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: var(--main-color);
 }
+
+.container {
+    max-width: 800px;
+    /*min-height: 70vh;*/
+    margin: 50px auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.container-height {
+    min-height: 74vh;
+}
+
 .navbar {
-    background-color: #333;
+    background-color: var(--main-color);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 .navbar a {
     float: left;
@@ -20,16 +44,32 @@ body {
     background-color: #ddd;
     color: black;
 }
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.navbar a.active {
+    background-color: #d7e4f4;
+    color: var(--main-color);
 }
+
+.footer {
+    position: fixed ;
+    bottom: 10px;
+    right: 10px;
+}
+
 h1, h2 {
-    color: #333;
+    color: var(--main-color);
 }
 p {
     color: #666;
+    line-height: 1.6;
+}
+li {
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        padding: 20px;
+        margin: 20px 20px;
+    }
 }
