@@ -1,10 +1,15 @@
 // Содержимое компонентов в виде строковых констант
 const headerHTML = `
 <div class="navbar">
-    <a href="index.html" id="homeLink">Home</a>
-    <a href="about.html" id="aboutLink">About Us</a>
-    <a href="services.html" id="servicesLink">Services</a>
-    <a href="contact.html" id="contactLink">Contact Us</a>
+    <div class="navbar-inner">
+        <div class="brand-logo"><span class="brand-letter">K</span><span class="brand-letter">L</span><span class="brand-letter">F</span></div>
+        <div class="nav-links">
+            <a href="index.html" id="homeLink">Home</a>
+            <a href="about.html" id="aboutLink">About Us</a>
+            <a href="services.html" id="servicesLink">Services</a>
+            <a href="contact.html" id="contactLink">Contact Us</a>
+        </div>
+    </div>
 </div>
 `;
 
