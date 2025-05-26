@@ -19,14 +19,12 @@ const footerHTML = `
 </footer>
 `;
 
-// Функция загрузки компонентов при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     // Загружаем шапку
     const headerElement = document.getElementById('header');
     if (headerElement) {
         headerElement.innerHTML = headerHTML;
 
-        // Активация текущей страницы в меню
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         if (currentPage === '' || currentPage === 'index.html') {
             document.getElementById('homeLink').classList.add('active');
@@ -39,15 +37,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Загружаем футер
     const footerElement = document.getElementById('footer');
     if (footerElement) {
         footerElement.innerHTML = footerHTML;
 
-        // Устанавливаем текущий год
         const currentYearElement = document.getElementById('currentYear');
         if (currentYearElement) {
             currentYearElement.textContent = new Date().getFullYear();
         }
     }
+
+    const contentContainer = document.querySelector('.container');
+    if (contentContainer) {
+        setTimeout(function() {
+            contentContainer.classList.add('fade-in');
+        }, 50);
+    }
+
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href').indexOf('#') !== 0) { // не якорные ссылки
+                e.preventDefault();
+
+                const container = document.querySelector('.container');
+                container.style.opacity = 0;
+                container.style.transition = 'opacity 0.3s ease';
+
+                setTimeout(function() {
+                    window.location = link.href;
+                }, 300);
+            }
+        });
+    });
 });

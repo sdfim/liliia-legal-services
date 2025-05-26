@@ -20,10 +20,28 @@ body {
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    opacity: 0; /* Начальное состояние - невидимый */
 }
 
 .container-height {
     min-height: 74vh;
+}
+
+/* Стили для плавного перехода между страницами */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .navbar {
