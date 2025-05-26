@@ -66,10 +66,30 @@ li {
     line-height: 1.6;
 }
 
+/* Services columns layout */
+.services-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.services-columns .column {
+    flex: 0 0 48%;
+}
+
+.services-columns ul {
+    padding-left: 20px;
+}
+
 @media (max-width: 600px) {
     .container {
         max-width: 100%;
         padding: 20px;
         margin: 20px 20px;
     }
+
+    .services-columns {
+        flex-direction: column;
+    }
 }
+
