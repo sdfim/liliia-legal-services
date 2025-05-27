@@ -1,3 +1,4 @@
+/* filepath: /media/ndr/ADATA/html/liliia-legal-services/styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
@@ -9,7 +10,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: var(--main-color);
+    color: var(--main-color, #393b52);
+}
+.contact-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-column {
+    flex: 1;
+    min-width: 250px;
 }
 
 .container {
@@ -45,7 +56,7 @@ body {
 }
 
 .navbar {
-    background-color: var(--main-color);
+    background-color: var(--main-color, #393b52);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -139,7 +150,7 @@ body {
 }
 .navbar a.active {
     background-color: #d7e4f4;
-    color: var(--main-color);
+    color: var(--main-color, #393b52);
 }
 
 .footer {
@@ -149,7 +160,7 @@ body {
 }
 
 h1, h2 {
-    color: var(--main-color);
+    color: var(--main-color, #393b52);
 }
 p {
     color: #666;
